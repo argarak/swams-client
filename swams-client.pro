@@ -1,4 +1,5 @@
-QT += quick svg xml
+QT += quick svg xml bluetooth
+android: QT += androidextras
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -34,3 +35,5 @@ DISTFILES += \
     icons/navigation_close.svg \
     icons/navigation_menu.svg \
     icons/navigation_more_vert.svg
+
+FORMS +=
