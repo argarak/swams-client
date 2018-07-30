@@ -1,4 +1,9 @@
-#include <QGuiApplication>
+#include <QtWidgets/QApplication>
+#include <QtQuick/QQuickView>
+#include <QtCore/QDir>
+#include <QtQml/QQmlEngine>
+
+#include <QApplication>
 #include <QQmlApplicationEngine>
 
 #include <QDebug>
@@ -13,11 +18,10 @@
 #include <QtSvg>
 #endif
 
-int main(int argc, char *argv[])
-{
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+int main(int argc, char *argv[]) {
+    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling); // DPI support
 
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     QList<QBluetoothHostInfo> infos = QBluetoothLocalDevice::allDevices();
     if (infos.isEmpty())
@@ -25,6 +29,7 @@ int main(int argc, char *argv[])
                       "Example will not work properly.";
 
     QQmlApplicationEngine engine;
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;

@@ -9,7 +9,8 @@
         <file>icons/navigation_menu.svg</file>
         <file>icons/navigation_more_vert.svg</file>
         <file>main.cpp</file>
-        <file>status.qml</file>
         <file>ErrorPopup.qml</file>
+        <file>convert.js</file>
+        <file>monitor.js</file>
     </qresource>
 </RCC>
